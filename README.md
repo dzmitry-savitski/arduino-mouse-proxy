@@ -30,11 +30,26 @@ Or add to `requirements.txt`:
 arduino-mouse @ git+https://github.com/dzmitry-savitski/arduino-mouse-proxy.git
 ```
 
+### Finding the Serial Port
+
+**Linux:**
+```bash
+ls /dev/ttyACM*
+```
+
+**Windows:**
+- Open Device Manager → Ports (COM & LPT) → Look for "Arduino Leonardo"
+- Or run in PowerShell:
+  ```powershell
+  Get-WMIObject Win32_SerialPort | Select-Object DeviceID, Description
+  ```
+
 ## Usage
 
 ```python
 from arduino_mouse import ArduinoMouse, Curve
 
+# Linux: /dev/ttyACM0, Windows: COM3, COM4, etc.
 with ArduinoMouse(port="/dev/ttyACM0") as mouse:
     # Move 100px right, 50px up over 500ms
     mouse.move(dx=100, dy=-50, duration_ms=500)
