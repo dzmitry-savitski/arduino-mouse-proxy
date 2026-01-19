@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arduino-mouse"
+version = "1.0.0"
+description = "Control mouse movements via Arduino Leonardo HID"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "pyserial>=3.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/dzmitry-savitski/arduino-mouse-proxy"
+
+[tool.setuptools.packages.find]
+where = ["python"]

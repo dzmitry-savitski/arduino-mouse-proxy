@@ -6,11 +6,7 @@ Make sure the Arduino Leonardo is connected and flashed with mouse_proxy firmwar
 Adjust the port to match your system (e.g., "/dev/ttyACM0" on Linux, "COM3" on Windows).
 """
 
-import sys
 import time
-
-# Add parent directory to path for local development
-sys.path.insert(0, "../python")
 
 from arduino_mouse import ArduinoMouse, Curve
 
